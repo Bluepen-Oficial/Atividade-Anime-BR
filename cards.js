@@ -1,10 +1,6 @@
 /* ================================================
    js/cards.js — AnimeBR
    Gera e gerencia os cards de personagens
-
-   🐛 BUGS PROPOSITAIS:
-     BUG #7: filtro de personagens aplicado no seletor errado
-             (busca '#filtros' ao invés de '#filtros-bar')
    ================================================ */
 
 // ── DADOS DOS PERSONAGENS ──────────────────────
@@ -146,13 +142,9 @@ function gerarCardsFull() {
 
 // ── FILTROS DE PERSONAGENS ────────────────────
 function setupFiltros() {
-  // 🐛 BUG #7: seletor errado!
-  //   O HTML tem id="filtros-bar" mas aqui buscamos '#filtros'
-  //   Os botões nunca são encontrados e o filtro não funciona
-  //   Corrija: troque '#filtros' por '#filtros-bar'
-  const barraFiltros = document.querySelector('#filtros');  // ← seletor errado!
+  const barraFiltros = document.querySelector('#filtros');  
 
-  if (!barraFiltros) return; // Como o ID está errado, para aqui sem erro
+  if (!barraFiltros) return; 
 
   const botoes = barraFiltros.querySelectorAll('.filtro-btn');
 
