@@ -15,12 +15,6 @@
   <link rel="stylesheet" href="css/footer.css" />
 
   <style>
-    /* ==========================================
-       CONTATO — CSS inline (mesmo problema de sobre.html)
-       🐛 ERRO #8 continuação: também deveria estar
-       em css/contato.css
-       ========================================== */
-
     .contato-section { padding: 80px 0; }
 
     .contato-grid {
@@ -96,12 +90,12 @@
       letter-spacing: 0.06em;
     }
 
-    /* 🐛 ERRO #2 (CSS Fácil): padding incorreto nos inputs — muito espaço vertical, pouco horizontal */
+    
     .form-input,
     .form-select,
     .form-textarea {
       width: 100%;
-      padding: 20px 8px;   /* ← padding incorreto: vertical muito grande, horizontal pequeno */
+      padding: 20px 8px;  
       background: var(--bg-secondary);
       border: 1px solid var(--glass-border);
       border-radius: 10px;
@@ -135,9 +129,9 @@
       gap: 20px;
     }
 
-    /* 🐛 ERRO #3 (CSS Fácil): botão desalinhado no form também */
+   
     .form-submit {
-      text-align: left;   /* ← deveria ser center ou o botão ter width: 100% */
+      text-align: left;  
       margin-top: 8px;
     }
 
