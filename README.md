@@ -43,7 +43,7 @@ animesbr/
 ---
 
 #### Desafio 1 — Contraste do texto no banner
-**Problema:** O texto de introdução do hero está quase invisível. A cor  :  54 tem contraste insuficiente contra o fundo escuro.  
+**Problema:** O texto de introdução do hero está quase invisível. A cor tem contraste insuficiente contra o fundo escuro.  
 **Tarefa:** Troque a cor por algo legível.
 
 ---
