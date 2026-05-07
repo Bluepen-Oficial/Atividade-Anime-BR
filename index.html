@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnimeBR — Cultura Otaku do Brasil</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS separados por responsabilidade -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body class="dark-mode">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⛩</span>
+        <span class="logo-text">Anime<span class="logo-br">BR</span></span>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Início</a></li>
+          <li><a href="personagens.html" class="nav-link">Personagens</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- 🐛 BUG #5 (JS): botão de tema tem id errado — veja js/theme.js -->
+        <button class="btn-theme" id="theme-btn-toggle" title="Alternar tema">🌙</button>
+        <button class="btn-menu" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <!-- 🐛 ERRO #1 (CSS Fácil): texto com baixo contraste — corrija em css/home.css (.hero-subtitle) -->
+      <p class="hero-subtitle">✦ A animação nascida no coração do Brasil ✦</p>
+      <h1 class="hero-title">
+        Universo<br />
+        <span class="hero-highlight">AnimeBR</span>
+      </h1>
+      <p class="hero-desc">
+        Descubra heróis, histórias e universos criados por artistas brasileiros.
+        Do cerrado à floresta, do funk ao forró — a cultura pop do Brasil ganhou forma animada.
+      </p>
+      <div class="hero-actions">
+        <!-- 🐛 ERRO #3 (CSS Fácil): botão desalinhado — corrija em css/home.css (.hero-actions) -->
+        <a href="personagens.html" class="btn btn-primary">Explorar Personagens</a>
+        <a href="sobre.html" class="btn btn-outline">Nossa História</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-float card-float-1">
+        <div class="float-card-inner">
+          <span class="float-emoji">🌟</span>
+          <span class="float-label">+120 Personagens</span>
+        </div>
+      </div>
+      <div class="hero-card-float card-float-2">
+        <div class="float-card-inner">
+          <span class="float-emoji">🎌</span>
+          <span class="float-label">Cultura BR</span>
+        </div>
+      </div>
+      <div class="hero-card-float card-float-3">
+        <div class="float-card-inner">
+          <span class="float-emoji">🎨</span>
+          <span class="float-label">Arte Independente</span>
+        </div>
+      </div>
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+    </div>
+  </section>
+
+  <!-- ===== DESTAQUES ===== -->
+  <section class="section destaques-section" id="destaques">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Em Alta</span>
+        <h2 class="section-title">Destaques da Semana</h2>
+        <p class="section-desc">Os animes brasileiros que estão conquistando o mundo</p>
+      </div>
+
+      <!-- 🐛 ERRO #6 (CSS Médio): grid com colunas desproporcionais — corrija em css/home.css (.destaques-grid) -->
+      <div class="destaques-grid">
+
+        <article class="destaque-card destaque-main">
+          <div class="destaque-thumb destaque-thumb--guerreiro">
+            <div class="destaque-badge">🔥 Trending</div>
+            <div class="destaque-art">
+              <div class="art-silhouette art-warrior"></div>
+            </div>
+          </div>
+          <div class="destaque-info">
+            <span class="destaque-cat">Ação / Aventura</span>
+            <h3 class="destaque-title">Guerreiro do Sertão</h3>
+            <p class="destaque-desc">Um jovem vaqueiro do Nordeste descobre poderes ancestrais ligados à caatinga e precisa defender sua terra de forças sobrenaturais.</p>
+            <div class="destaque-meta">
+              <span>⭐ 9.4</span>
+              <span>📺 24 eps</span>
+              <span>🗓 2024</span>
+            </div>
+            <a href="personagens.html" class="btn btn-primary btn-sm">Ver Personagens</a>
+          </div>
+        </article>
+
+        <article class="destaque-card destaque-side">
+          <div class="destaque-thumb destaque-thumb--amazonia">
+            <div class="destaque-badge destaque-badge--new">Novo</div>
+            <div class="destaque-art">
+              <div class="art-silhouette art-shaman"></div>
+            </div>
+          </div>
+          <div class="destaque-info">
+            <span class="destaque-cat">Fantasia</span>
+            <h3 class="destaque-title">Curupira Academy</h3>
+            <p class="destaque-desc">Escola de entidades da floresta treina novos guardiões da Amazônia.</p>
+            <div class="destaque-meta">
+              <span>⭐ 8.8</span>
+              <span>📺 12 eps</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="destaque-card destaque-side">
+          <div class="destaque-thumb destaque-thumb--funk">
+            <div class="destaque-art">
+              <div class="art-silhouette art-dancer"></div>
+            </div>
+          </div>
+          <div class="destaque-info">
+            <span class="destaque-cat">Slice of Life</span>
+            <h3 class="destaque-title">Baile do Futuro</h3>
+            <p class="destaque-desc">No Rio de 2080, a cultura funk virou religião e os DJs são semideuses.</p>
+            <div class="destaque-meta">
+              <span>⭐ 9.1</span>
+              <span>📺 8 eps</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PERSONAGENS ===== -->
+  <section class="section personagens-preview" id="personagens-preview">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Elenco</span>
+        <h2 class="section-title">Personagens Populares</h2>
+        <p class="section-desc">Conheça os heróis e vilões do universo AnimeBR</p>
+      </div>
+
+      <!-- Cards gerados via JS (cards.js) -->
+      <div class="personagens-grid" id="personagens-grid">
+        <!-- preenchido por js/cards.js -->
+      </div>
+
+      <div class="section-cta">
+        <a href="personagens.html" class="btn btn-outline">Ver Todos os Personagens →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOTICIAS ===== -->
+  <section class="section noticias-section" id="noticias">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">News</span>
+        <h2 class="section-title">Eventos & Notícias</h2>
+      </div>
+
+      <!-- 🐛 ERRO #4 (CSS Fácil): fonte inconsistente — corrija em css/home.css (.noticia-card .noticia-desc) -->
+      <div class="noticias-grid">
+
+        <div class="noticia-card">
+          <div class="noticia-data">
+            <span class="noticia-dia">15</span>
+            <span class="noticia-mes">Jun</span>
+          </div>
+          <div class="noticia-content">
+            <span class="noticia-tag">Evento</span>
+            <h4 class="noticia-title">AnimeFest São Paulo 2025</h4>
+            <p class="noticia-desc">Maior evento de cultura otaku do Brasil recebe painéis exclusivos dos criadores de Guerreiro do Sertão e Curupira Academy.</p>
+          </div>
+        </div>
+
+        <div class="noticia-card">
+          <div class="noticia-data">
+            <span class="noticia-dia">03</span>
+            <span class="noticia-mes">Jul</span>
+          </div>
+          <div class="noticia-content">
+            <span class="noticia-tag">Lançamento</span>
+            <h4 class="noticia-title">Nova Temporada: Boto Cor-de-Rosa</h4>
+            <p class="noticia-desc">A segunda temporada do aclamado anime ambientado no Amazonas chega com novos personagens e mitologia expandida.</p>
+          </div>
+        </div>
+
+        <div class="noticia-card">
+          <div class="noticia-data">
+            <span class="noticia-dia">22</span>
+            <span class="noticia-mes">Jul</span>
+          </div>
+          <div class="noticia-content">
+            <span class="noticia-tag">Prêmio</span>
+            <h4 class="noticia-title">AnimeBR vence prêmio internacional</h4>
+            <p class="noticia-desc">Pela primeira vez, uma produção 100% brasileira leva o troféu de melhor animação no Festival de Tóquio.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">⛩</span>
+          <span class="logo-text">Anime<span class="logo-br">BR</span></span>
+        </a>
+        <p class="footer-tagline">Cultura pop brasileira em forma de anime.</p>
+      </div>
+
+      <div class="footer-links">
+        <h5 class="footer-heading">Navegação</h5>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="personagens.html">Personagens</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5 class="footer-heading">Redes Sociais</h5>
+        <ul>
+          <li><a href="#">🐦 @AnimeBR_oficial</a></li>
+          <li><a href="#">📸 @animebrasileiro</a></li>
+          <li><a href="#">▶️ AnimeBR Channel</a></li>
+          <li><a href="#">💬 Discord AnimeBR</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h5 class="footer-heading">Newsletter</h5>
+        <p>Receba novidades direto no seu e-mail</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="seu@email.com" class="newsletter-input" />
+          <button class="btn btn-primary btn-sm">Entrar</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AnimeBR · Projeto educacional · Feito com 💚 no Brasil</p>
+    </div>
+  </footer>
+
+  <!-- JS separados por responsabilidade -->
+  <script src="js/theme.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* ================================================
+   css/footer.css — AnimeBR
+   Estilos do rodapé do site
+   ================================================ */
+
+.site-footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--glass-border);
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  padding: 64px 24px 40px;
+}
+
+/* ── BRAND ── */
+.footer-brand .logo {
+  margin-bottom: 16px;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── LINKS ── */
+.footer-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--neon-green);
+}
+
+/* ── NEWSLETTER ── */
+.footer-newsletter p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 10px 14px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.newsletter-input:focus {
+  border-color: var(--neon-green);
+}
+
+.newsletter-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── BOTTOM BAR ── */
+.footer-bottom {
+  border-top: 1px solid var(--glass-border);
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    padding: 48px 24px 32px;
+    gap: 28px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+}

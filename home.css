@@ -1,0 +1,423 @@
+/* ================================================
+   css/home.css — AnimeBR
+   Estilos específicos da página inicial (index.html)
+   ================================================ */
+
+/* ══════════════════════════════════════════════
+   HERO SECTION
+══════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--grad-hero);
+  padding-top: var(--header-h);
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 70% 50%, rgba(0, 255, 136, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(191, 95, 255, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-content {
+  padding: 80px 24px 80px 48px;
+  max-width: 680px;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🐛 ERRO #1 (Fácil): cor com baixo contraste — #7a85a3 sobre fundo escuro é difícil de ler
+   Corrija para uma cor mais legível como #c0cadf ou var(--neon-green) */
+.hero-subtitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #3a4055;  /* ← contraste muito baixo! */
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.95;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+}
+
+.hero-highlight {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--neon-green);
+  text-shadow: 0 0 40px rgba(0, 255, 136, 0.4);
+  display: block;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+/* 🐛 ERRO #3 (Fácil): botões desalinhados — flex-direction errado
+   O display flex está faltando ou justify está errado.
+   Os botões devem ficar lado a lado (row), não um embaixo do outro */
+.hero-actions {
+  display: flex;
+  flex-direction: column;  /* ← ERRADO: deveria ser row */
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* ── HERO VISUAL ── */
+.hero-visual {
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Cards flutuantes decorativos */
+.hero-card-float {
+  position: absolute;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(16px);
+  padding: 16px 20px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.card-float-1 { top: 20%; right: 10%; animation-delay: 0s; }
+.card-float-2 { top: 55%; right: 25%; animation-delay: -2s; }
+.card-float-3 { top: 75%; right: 8%; animation-delay: -4s; }
+
+.float-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.float-emoji { font-size: 1.5rem; }
+
+.float-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ══════════════════════════════════════════════
+   DESTAQUES
+══════════════════════════════════════════════ */
+.destaques-section { background: var(--bg-secondary); }
+
+/* 🐛 ERRO #6 (Médio): grid com proporções erradas
+   O card principal (main) deveria ocupar ~60% e os dois laterais 40%
+   Corrija para: grid-template-columns: 1.8fr 1fr  e  grid-template-rows correto */
+.destaques-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;  /* ← invertido! main deveria ser maior */
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+
+.destaque-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.destaque-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 255, 136, 0.2);
+}
+
+.destaque-main {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.destaque-side {
+  grid-column: 2;
+  display: flex;
+  align-items: stretch;
+}
+
+.destaque-side .destaque-thumb {
+  flex: 0 0 140px;
+  min-height: 160px;
+}
+
+.destaque-side .destaque-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.destaque-thumb {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.destaque-thumb--guerreiro { background: linear-gradient(135deg, #1a0a2e, #2d1450); }
+.destaque-thumb--amazonia  { background: linear-gradient(135deg, #0a1a10, #0d2b18); }
+.destaque-thumb--funk      { background: linear-gradient(135deg, #1a1000, #2b1d00); }
+
+.destaque-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 60, 60, 0.9);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.destaque-badge--new { background: rgba(0, 200, 100, 0.9); }
+
+/* Silhuetas decorativas SVG-like */
+.destaque-art { position: relative; z-index: 1; }
+
+.art-silhouette {
+  width: 120px;
+  height: 200px;
+  border-radius: 60px 60px 20px 20px;
+  opacity: 0.4;
+}
+
+.art-warrior { background: linear-gradient(180deg, var(--neon-purple), transparent); }
+.art-shaman  { background: linear-gradient(180deg, var(--neon-green), transparent); }
+.art-dancer  { background: linear-gradient(180deg, var(--neon-yellow), transparent); }
+
+.destaque-info { padding: 28px; }
+
+.destaque-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neon-green);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.destaque-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.destaque-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.destaque-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* ══════════════════════════════════════════════
+   PERSONAGENS PREVIEW (cards na home)
+══════════════════════════════════════════════ */
+
+/* 🐛 ERRO #2 (Fácil): gap incorreto entre cards — 48px é espaçamento exagerado
+   O ideal seria 24px ou 20px para cards em grid */
+.personagens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 48px;  /* ← muito espaçado! corrija para ~20-24px */
+}
+
+/* Estilos dos cards gerados pelo JS */
+.personagem-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.personagem-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 255, 136, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 255, 136, 0.1);
+}
+
+/* 🐛 ERRO #5 (Fácil): imagem/avatar esticado
+   object-fit: stretch faz distorcer — corrija para cover */
+.card-avatar {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  object-fit: stretch;  /* ← errado para manter proporção correta */
+  position: relative;
+  overflow: hidden;
+}
+
+.card-body { padding: 20px; }
+
+.card-tipo {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neon-green);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.card-nome {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.card-anime {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.card-poder {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding: 6px 10px;
+  background: var(--glass-bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+}
+
+/* ══════════════════════════════════════════════
+   NOTÍCIAS
+══════════════════════════════════════════════ */
+.noticias-section { background: var(--bg-secondary); }
+
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.noticia-card {
+  display: flex;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: var(--transition);
+}
+
+.noticia-card:hover {
+  border-color: rgba(0, 255, 136, 0.2);
+  transform: translateY(-3px);
+}
+
+.noticia-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 48px;
+  padding-top: 4px;
+}
+
+.noticia-dia {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--neon-green);
+  line-height: 1;
+}
+
+.noticia-mes {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.noticia-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neon-blue);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.noticia-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* 🐛 ERRO #4 (Fácil): fonte inconsistente — esta seção usa Space Mono
+   quando deveria usar a fonte padrão Syne como o resto do site
+   Corrija removendo font-family daqui */
+.noticia-desc {
+  font-family: 'Space Mono', monospace;  /* ← inconsistente com o resto do site */
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .hero-content { padding: 80px 24px; max-width: 100%; }
+  .destaques-grid { grid-template-columns: 1fr; }
+  .destaque-main { grid-row: auto; }
+  .noticias-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .personagens-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}

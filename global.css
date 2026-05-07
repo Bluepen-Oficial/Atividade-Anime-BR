@@ -1,0 +1,293 @@
+/* ================================================
+   css/global.css — AnimeBR
+   Variáveis, tipografia, utilitários globais
+   ================================================ */
+
+/* ── VARIÁVEIS DE TEMA DARK (padrão) ── */
+:root {
+  /* Cores neon */
+  --neon-green:   #00ff88;
+  --neon-blue:    #00cfff;
+  --neon-purple:  #bf5fff;
+  --neon-yellow:  #ffe600;
+
+  /* Backgrounds */
+  --bg-primary:   #0a0c10;
+  --bg-secondary: #111420;
+  --bg-card:      #161926;
+
+  /* Glass effect */
+  --glass-bg:     rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  /* Texto */
+  --text-primary:   #f0f4ff;
+  --text-secondary: #7a85a3;
+  --text-muted:     #4a5070;
+
+  /* Gradientes */
+  --grad-hero:    linear-gradient(135deg, #0a0c10 0%, #0d1220 50%, #101528 100%);
+  --grad-green:   linear-gradient(135deg, #00ff88, #00cfff);
+  --grad-purple:  linear-gradient(135deg, #bf5fff, #00cfff);
+  --grad-brazil:  linear-gradient(135deg, #009c3b, #ffdf00, #002776);
+
+  /* Sombras */
+  --shadow-neon:  0 0 20px rgba(0, 255, 136, 0.2);
+  --shadow-card:  0 8px 32px rgba(0, 0, 0, 0.4);
+
+  /* Tipografia */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Syne', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  /* Layout */
+  --header-h:     72px;
+  --container-w:  1200px;
+  --radius-sm:    8px;
+  --radius-md:    16px;
+  --radius-lg:    24px;
+
+  /* Transições */
+  --transition:   0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── TEMA LIGHT ── */
+/* 🐛 ERRO #10 (CSS Médio): dark mode incompleto — nem todas as variáveis foram trocadas */
+body.light-mode {
+  --bg-primary:   #f0f2f8;
+  --bg-secondary: #ffffff;
+  --bg-card:      #ffffff;
+
+  --glass-bg:     rgba(0, 0, 0, 0.04);
+  --glass-border: rgba(0, 0, 0, 0.1);
+
+  --text-primary:   #0f1220;
+  /* ← falta trocar text-secondary e text-muted para o light mode! */
+
+  --shadow-card:  0 8px 32px rgba(0, 0, 0, 0.08);
+  --grad-hero:    linear-gradient(135deg, #e8ebf8 0%, #f0f3ff 100%);
+}
+
+/* ── BASE ── */
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ── CONTAINER ── */
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── SEÇÕES ── */
+.section {
+  /* 🐛 ERRO #9 (CSS Médio): padding inconsistente — home usa 80px, outras seções usam valores diferentes */
+  padding: 96px 0;
+}
+
+/* ── SECTION HEADER ── */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--neon-green);
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── BOTÕES ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  border: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--neon-green);
+  color: #000;
+  border-color: var(--neon-green);
+}
+
+/* 🐛 ERRO #8 (CSS Médio - duplicata): hover definido duas vezes com valores conflitantes
+   Esta regra será sobrescrita pela regra mais abaixo — propositalmente */
+.btn-primary:hover {
+  background: transparent;
+  color: var(--neon-green);
+  box-shadow: var(--shadow-neon);
+}
+
+/* ← Conflito: esta segunda regra tem transform mas a de cima não */
+.btn-primary:hover {
+  transform: translateY(-3px);
+  /* faltou manter o background e color da regra anterior — conflito CSS */
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+  border-color: var(--neon-green);
+  color: var(--neon-green);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.82rem;
+}
+
+/* ── SECTION CTA ── */
+.section-cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* ── PAGE HERO (páginas internas) ── */
+.page-hero {
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  padding-top: var(--header-h);
+  position: relative;
+  overflow: hidden;
+  background: var(--grad-hero);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px 24px;
+}
+
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--text-primary);
+  line-height: 1;
+  margin: 12px 0;
+  letter-spacing: 0.02em;
+}
+
+.page-hero-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 12px;
+}
+
+.page-hero-orbs {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── ORB DECORATIVOS ── */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--neon-green);
+  top: -100px;
+  right: 10%;
+}
+
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--neon-purple);
+  bottom: -60px;
+  left: 5%;
+}
+
+.orb-3 {
+  width: 200px;
+  height: 200px;
+  background: var(--neon-blue);
+  top: 40%;
+  right: 30%;
+}
+
+/* ── LOGO ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.logo-icon { font-size: 1.4rem; }
+.logo-br { color: var(--neon-green); }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--neon-green); }
+
+/* ── SELEÇÃO ── */
+::selection {
+  background: rgba(0, 255, 136, 0.25);
+  color: var(--text-primary);
+}
+
+/* ── RESPONSIVO BÁSICO ── */
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .page-hero-content { padding: 48px 24px; }
+}

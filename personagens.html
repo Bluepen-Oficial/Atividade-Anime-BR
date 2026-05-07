@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personagens — AnimeBR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/personagens.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body class="dark-mode">
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⛩</span>
+        <span class="logo-text">Anime<span class="logo-br">BR</span></span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="personagens.html" class="nav-link active">Personagens</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-theme" id="theme-btn-toggle" title="Alternar tema">🌙</button>
+        <button class="btn-menu" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content container">
+      <span class="section-tag">Elenco Completo</span>
+      <h1 class="page-hero-title">Personagens</h1>
+      <p class="page-hero-desc">Explore todos os heróis, vilões e coadjuvantes do universo AnimeBR</p>
+    </div>
+    <div class="page-hero-orbs">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="filtros-section">
+    <div class="container">
+      <!-- 🐛 ERRO #7 (CSS Médio): evento de filtro aplicado no seletor errado — veja js/cards.js -->
+      <div class="filtros-bar" id="filtros-bar">
+        <button class="filtro-btn active" data-filter="todos">Todos</button>
+        <button class="filtro-btn" data-filter="heroi">Heróis</button>
+        <button class="filtro-btn" data-filter="vilao">Vilões</button>
+        <button class="filtro-btn" data-filter="suporte">Suporte</button>
+        <button class="filtro-btn" data-filter="misterioso">Misteriosos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID DE PERSONAGENS -->
+  <section class="section personagens-full-section">
+    <div class="container">
+      <!-- 🐛 ERRO #6 (CSS Médio): grid desproporcionado — corrija em css/personagens.css (.personagens-full-grid) -->
+      <div class="personagens-full-grid" id="personagens-full-grid">
+        <!-- Preenchido por js/cards.js -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">⛩</span>
+          <span class="logo-text">Anime<span class="logo-br">BR</span></span>
+        </a>
+        <p class="footer-tagline">Cultura pop brasileira em forma de anime.</p>
+      </div>
+      <div class="footer-links">
+        <h5 class="footer-heading">Navegação</h5>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="personagens.html">Personagens</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5 class="footer-heading">Redes Sociais</h5>
+        <ul>
+          <li><a href="#">🐦 @AnimeBR_oficial</a></li>
+          <li><a href="#">📸 @animebrasileiro</a></li>
+          <li><a href="#">▶️ AnimeBR Channel</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h5 class="footer-heading">Newsletter</h5>
+        <p>Receba novidades direto no seu e-mail</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="seu@email.com" class="newsletter-input" />
+          <button class="btn btn-primary btn-sm">Entrar</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AnimeBR · Projeto educacional · Feito com 💚 no Brasil</p>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

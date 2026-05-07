@@ -1,0 +1,179 @@
+/* ================================================
+   css/header.css — AnimeBR
+   Estilos do cabeçalho e navegação principal
+   ================================================ */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: rgba(10, 12, 16, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: background var(--transition), border-color var(--transition);
+}
+
+/* Header no modo claro */
+body.light-mode .site-header {
+  background: rgba(240, 242, 248, 0.9);
+}
+
+/* Header com scroll */
+.site-header.scrolled {
+  background: rgba(10, 12, 16, 0.98);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── NAVEGAÇÃO ── */
+.main-nav { display: flex; }
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: color var(--transition), background var(--transition);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 20px;
+  height: 2px;
+  background: var(--neon-green);
+  border-radius: 2px;
+  transition: transform var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: var(--glass-bg);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-link.active {
+  color: var(--neon-green);
+}
+
+/* ── AÇÕES DO HEADER ── */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Botão tema */
+.btn-theme {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-theme:hover {
+  background: rgba(0, 255, 136, 0.1);
+  border-color: var(--neon-green);
+  transform: rotate(20deg);
+}
+
+/* ── MENU HAMBURGUER ── */
+.btn-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.btn-menu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Hamburguer ativo */
+.btn-menu.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.btn-menu.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.btn-menu.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 768px) {
+  .btn-menu { display: flex; }
+
+  .main-nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 16px 24px 24px;
+    transform: translateY(-110%);
+    transition: transform var(--transition);
+    z-index: 99;
+  }
+
+  .main-nav.open {
+    transform: translateY(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 12px 16px;
+  }
+}

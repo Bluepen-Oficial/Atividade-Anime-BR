@@ -1,0 +1,195 @@
+/* ================================================
+   css/personagens.css — AnimeBR
+   Estilos da página de personagens completa
+   ================================================ */
+
+/* ── FILTROS ── */
+.filtros-section {
+  padding: 24px 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: var(--header-h);
+  z-index: 50;
+  backdrop-filter: blur(16px);
+}
+
+.filtros-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filtro-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(0, 255, 136, 0.3);
+}
+
+.filtro-btn.active {
+  background: var(--neon-green);
+  color: #000;
+  border-color: var(--neon-green);
+  font-weight: 700;
+}
+
+/* ── GRID COMPLETO DE PERSONAGENS ── */
+
+/* 🐛 ERRO #6 (Médio): grid com colunas desproporcionais
+   Usar repeat(auto-fill, minmax(240px, 1fr)) seria mais correto
+   O valor atual cria colunas muito largas em telas médias */
+.personagens-full-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* ← fixo, não responsivo */
+  gap: 28px;
+  margin-top: 0;
+}
+
+/* Cards na página de personagens (mais detalhados) */
+.personagem-card-full {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition);
+  position: relative;
+}
+
+.personagem-card-full::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.personagem-card-full:hover::before { opacity: 1; }
+
+.personagem-card-full:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 255, 136, 0.25);
+}
+
+/* 🐛 ERRO #8 (Médio - hover errado): transition está aplicado no estado hover
+   e não no elemento base — causando que a transição só funciona ao entrar,
+   não ao sair. Corrija movendo transition para .card-full-avatar */
+.card-full-avatar {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-full-avatar:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;  /* ← transition só no hover, não no base */
+}
+
+.card-full-avatar-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+}
+
+.card-full-avatar-emoji {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+
+/* Tags de tipo */
+.card-tipo-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.tipo-heroi     { background: rgba(0, 255, 136, 0.2);  color: var(--neon-green);  border: 1px solid rgba(0,255,136,0.3); }
+.tipo-vilao     { background: rgba(255, 60, 60, 0.2);   color: #ff4040;            border: 1px solid rgba(255,60,60,0.3); }
+.tipo-suporte   { background: rgba(0, 207, 255, 0.2);   color: var(--neon-blue);   border: 1px solid rgba(0,207,255,0.3); }
+.tipo-misterioso{ background: rgba(191, 95, 255, 0.2);  color: var(--neon-purple); border: 1px solid rgba(191,95,255,0.3);}
+
+.card-full-body { padding: 24px; }
+
+.card-full-nome {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.card-full-anime {
+  font-size: 0.82rem;
+  color: var(--neon-green);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.card-full-bio {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.card-full-poderes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.poder-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+}
+
+/* Estado oculto para filtro */
+.personagem-card-full.hidden {
+  display: none;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 900px) {
+  .personagens-full-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .personagens-full-grid { grid-template-columns: 1fr; }
+  .filtros-bar { gap: 6px; }
+  .filtro-btn { padding: 6px 14px; font-size: 0.8rem; }
+}
