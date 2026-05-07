@@ -1,10 +1,6 @@
 /* ================================================
    js/menu.js — AnimeBR
    Controla o menu mobile (hamburguer) e scroll do header
-
-   🐛 BUGS PROPOSITAIS:
-     BUG #6: toggleMenu usa classList.toggle com string inconsistente
-             Às vezes adiciona 'open', às vezes checa 'is-open'
    ================================================ */
 
 // Referências dos elementos do menu
@@ -14,14 +10,10 @@ const siteHeader   = document.getElementById('site-header');
 
 // Abre/fecha o menu mobile
 function toggleMenu() {
-  // 🐛 BUG #6: aqui adiciona a classe 'open' no nav...
+  
   mainNav.classList.toggle('open');
 
-  // 🐛 BUG #6: ...mas aqui checa 'is-open' (diferente!) para o botão
-  //            Resultado: o botão hamburguer nunca fica no estado "ativo"
-  //            visualmente, mesmo com o menu aberto
-  //            Corrija: troque 'is-open' por 'open' OU padronize um único nome
-  const estaAberto = mainNav.classList.contains('is-open');  // ← inconsistente!
+  const estaAberto = mainNav.classList.contains('is-open');  
   hamburgerBtn.classList.toggle('active', estaAberto);
 
   // Controla aria-expanded para acessibilidade
