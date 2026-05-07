@@ -33,14 +33,12 @@
   z-index: 2;
 }
 
-/* 🐛 ERRO #1 (Fácil): cor com baixo contraste — #7a85a3 sobre fundo escuro é difícil de ler
-   Corrija para uma cor mais legível como #c0cadf ou var(--neon-green) */
 .hero-subtitle {
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #3a4055;  /* ← contraste muito baixo! */
+  color: #3a4055;  
   margin-bottom: 20px;
 }
 
@@ -68,9 +66,6 @@
   margin-bottom: 40px;
 }
 
-/* 🐛 ERRO #3 (Fácil): botões desalinhados — flex-direction errado
-   O display flex está faltando ou justify está errado.
-   Os botões devem ficar lado a lado (row), não um embaixo do outro */
 .hero-actions {
   display: flex;
   flex-direction: column;  /* ← ERRADO: deveria ser row */
@@ -129,12 +124,10 @@
 ══════════════════════════════════════════════ */
 .destaques-section { background: var(--bg-secondary); }
 
-/* 🐛 ERRO #6 (Médio): grid com proporções erradas
-   O card principal (main) deveria ocupar ~60% e os dois laterais 40%
-   Corrija para: grid-template-columns: 1.8fr 1fr  e  grid-template-rows correto */
+
 .destaques-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;  /* ← invertido! main deveria ser maior */
+  grid-template-columns: 1fr 2fr;  
   grid-template-rows: auto auto;
   gap: 24px;
 }
@@ -256,9 +249,6 @@
 /* ══════════════════════════════════════════════
    PERSONAGENS PREVIEW (cards na home)
 ══════════════════════════════════════════════ */
-
-/* 🐛 ERRO #2 (Fácil): gap incorreto entre cards — 48px é espaçamento exagerado
-   O ideal seria 24px ou 20px para cards em grid */
 .personagens-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -281,8 +271,7 @@
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 255, 136, 0.1);
 }
 
-/* 🐛 ERRO #5 (Fácil): imagem/avatar esticado
-   object-fit: stretch faz distorcer — corrija para cover */
+
 .card-avatar {
   width: 100%;
   height: 200px;
@@ -290,7 +279,7 @@
   align-items: center;
   justify-content: center;
   font-size: 5rem;
-  object-fit: stretch;  /* ← errado para manter proporção correta */
+  object-fit: stretch;  
   position: relative;
   overflow: hidden;
 }
@@ -398,11 +387,9 @@
   line-height: 1.4;
 }
 
-/* 🐛 ERRO #4 (Fácil): fonte inconsistente — esta seção usa Space Mono
-   quando deveria usar a fonte padrão Syne como o resto do site
-   Corrija removendo font-family daqui */
+
 .noticia-desc {
-  font-family: 'Space Mono', monospace;  /* ← inconsistente com o resto do site */
+  font-family: 'Space Mono', monospace; 
   font-size: 0.82rem;
   color: var(--text-secondary);
   line-height: 1.6;
