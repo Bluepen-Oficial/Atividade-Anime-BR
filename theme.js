@@ -1,14 +1,7 @@
 /* ================================================
    js/theme.js — AnimeBR
    Controla o modo claro/escuro (dark/light mode)
-
-   🐛 BUGS PROPOSITAIS para os alunos encontrarem:
-     BUG #5: o botão tem id="theme-btn-toggle" no HTML
-             mas aqui estamos buscando id="btn-theme" (errado!)
-     BUG #10: o light-mode não funciona completamente
-              pois algumas variáveis CSS não foram definidas
-              no tema light (ver css/global.css)
-   ================================================ */
+   =============================================== */
 
 // Inicializa o tema baseado na preferência salva ou do sistema
 function initTheme() {
@@ -42,10 +35,8 @@ function applyTheme(tema) {
 
 // Atualiza o ícone do botão de tema
 function updateThemeIcon(icone) {
-  // 🐛 BUG #5: ID errado! O HTML tem id="theme-btn-toggle"
-  //            mas aqui buscamos "btn-theme" — o botão nunca é encontrado
-  //            Corrija trocando 'btn-theme' por 'theme-btn-toggle'
-  const btn = document.getElementById('btn-theme');  // ← ID errado!
+
+  const btn = document.getElementById('btn-theme');  
 
   if (btn) {
     btn.textContent = icone;
@@ -62,13 +53,13 @@ function toggleTheme() {
 
 // Adiciona listener no botão correto
 function setupThemeBtn() {
-  // 🐛 BUG #5 continuação: mesmo problema aqui
-  const btn = document.getElementById('btn-theme');  // ← ID errado!
+  
+  const btn = document.getElementById('btn-theme');  
 
   if (btn) {
     btn.addEventListener('click', toggleTheme);
   }
-  // Como btn é null, o clique nunca é registrado
+  
 }
 
 // Exporta função para ser usada pelo main.js
