@@ -33,8 +33,9 @@ animesbr/
 
 ## 🧪 DESAFIOS
 
-> Abra o projeto no navegador e inspecione com as DevTools (F12).  
-> Leia os comentários nos arquivos CSS e JS — eles dão dicas!
+> ~~Abra o projeto no navegador e inspecione com as DevTools (F12).~~  
+> ~~Leia os comentários nos arquivos CSS e JS — eles dão dicas!~~
+> **feature removed**
 
 ---
 
