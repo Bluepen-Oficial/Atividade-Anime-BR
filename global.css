@@ -52,7 +52,6 @@
 }
 
 /* ── TEMA LIGHT ── */
-/* 🐛 ERRO #10 (CSS Médio): dark mode incompleto — nem todas as variáveis foram trocadas */
 body.light-mode {
   --bg-primary:   #f0f2f8;
   --bg-secondary: #ffffff;
@@ -62,7 +61,7 @@ body.light-mode {
   --glass-border: rgba(0, 0, 0, 0.1);
 
   --text-primary:   #0f1220;
-  /* ← falta trocar text-secondary e text-muted para o light mode! */
+  
 
   --shadow-card:  0 8px 32px rgba(0, 0, 0, 0.08);
   --grad-hero:    linear-gradient(135deg, #e8ebf8 0%, #f0f3ff 100%);
@@ -85,7 +84,6 @@ body {
 
 /* ── SEÇÕES ── */
 .section {
-  /* 🐛 ERRO #9 (CSS Médio): padding inconsistente — home usa 80px, outras seções usam valores diferentes */
   padding: 96px 0;
 }
 
@@ -151,19 +149,17 @@ body {
   border-color: var(--neon-green);
 }
 
-/* 🐛 ERRO #8 (CSS Médio - duplicata): hover definido duas vezes com valores conflitantes
-   Esta regra será sobrescrita pela regra mais abaixo — propositalmente */
+
 .btn-primary:hover {
   background: transparent;
   color: var(--neon-green);
   box-shadow: var(--shadow-neon);
 }
 
-/* ← Conflito: esta segunda regra tem transform mas a de cima não */
+
 .btn-primary:hover {
   transform: translateY(-3px);
-  /* faltou manter o background e color da regra anterior — conflito CSS */
-}
+ }
 
 .btn-outline {
   background: transparent;
