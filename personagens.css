@@ -46,12 +46,9 @@
 
 /* ── GRID COMPLETO DE PERSONAGENS ── */
 
-/* 🐛 ERRO #6 (Médio): grid com colunas desproporcionais
-   Usar repeat(auto-fill, minmax(240px, 1fr)) seria mais correto
-   O valor atual cria colunas muito largas em telas médias */
 .personagens-full-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* ← fixo, não responsivo */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 28px;
   margin-top: 0;
 }
@@ -88,9 +85,6 @@
   border-color: rgba(0, 255, 136, 0.25);
 }
 
-/* 🐛 ERRO #8 (Médio - hover errado): transition está aplicado no estado hover
-   e não no elemento base — causando que a transição só funciona ao entrar,
-   não ao sair. Corrija movendo transition para .card-full-avatar */
 .card-full-avatar {
   height: 220px;
   display: flex;
@@ -103,7 +97,7 @@
 
 .card-full-avatar:hover {
   transform: scale(1.05);
-  transition: transform 0.4s ease;  /* ← transition só no hover, não no base */
+  transition: transform 0.4s ease; 
 }
 
 .card-full-avatar-bg {
