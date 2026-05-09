@@ -23,7 +23,7 @@
   /* Texto */
   --text-primary:   #f0f4ff;
   --text-secondary: #7a85a3;
-  --text-muted:     #4a5070;
+  --text-muted:     #53704a;
 
   /* Gradientes */
   --grad-hero:    linear-gradient(135deg, #0a0c10 0%, #0d1220 50%, #101528 100%);
@@ -129,6 +129,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   gap: 8px;
   padding: 12px 28px;
   border-radius: var(--radius-sm);

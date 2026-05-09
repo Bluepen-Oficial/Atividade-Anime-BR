@@ -142,8 +142,8 @@ function gerarCardsFull() {
 
 // ── FILTROS DE PERSONAGENS ────────────────────
 function setupFiltros() {
-  const barraFiltros = document.querySelector('#filtros');  
-
+  const barraFiltros = document.querySelector('#filtros-bar');  
+  //console.log("Teste A");
   if (!barraFiltros) return; 
 
   const botoes = barraFiltros.querySelectorAll('.filtro-btn');
@@ -151,6 +151,7 @@ function setupFiltros() {
   botoes.forEach(function(btn) {
     btn.addEventListener('click', function() {
       // Remove active de todos
+      //console.log("Teste B");
       botoes.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
 
@@ -164,6 +165,7 @@ function setupFiltros() {
 function filtrarCards(filtro) {
   const cards = document.querySelectorAll('.personagem-card-full');
 
+  //console.log("Teste C");
   cards.forEach(function(card) {
     const tipo = card.getAttribute('data-tipo');
     if (filtro === 'todos' || tipo === filtro) {
