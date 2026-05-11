@@ -5,7 +5,7 @@
 
 /* ── FILTROS ── */
 .filtros-section {
-  padding: 24px 0;
+  padding: var(--section-padding);
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--glass-border);
   position: sticky;
@@ -79,7 +79,9 @@
   transition: opacity var(--transition);
 }
 
-.personagem-card-full:hover::before { opacity: 1; }
+.personagem-card-full:hover::before {
+  opacity: 1;
+}
 
 .personagem-card-full:hover {
   transform: translateY(-6px);
@@ -98,7 +100,7 @@
 
 .card-full-avatar:hover {
   transform: scale(1.05);
-  transition: transform 0.4s ease; 
+  transition: transform 0.4s ease;
 }
 
 .card-full-avatar-bg {
@@ -110,7 +112,7 @@
 .card-full-avatar-emoji {
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
 /* Tags de tipo */
@@ -127,12 +129,33 @@
   z-index: 3;
 }
 
-.tipo-heroi     { background: rgba(0, 255, 136, 0.2);  color: var(--neon-green);  border: 1px solid rgba(0,255,136,0.3); }
-.tipo-vilao     { background: rgba(255, 60, 60, 0.2);   color: #ff4040;            border: 1px solid rgba(255,60,60,0.3); }
-.tipo-suporte   { background: rgba(0, 207, 255, 0.2);   color: var(--neon-blue);   border: 1px solid rgba(0,207,255,0.3); }
-.tipo-misterioso{ background: rgba(191, 95, 255, 0.2);  color: var(--neon-purple); border: 1px solid rgba(191,95,255,0.3);}
+.tipo-heroi {
+  background: rgba(0, 255, 136, 0.2);
+  color: var(--neon-green);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
 
-.card-full-body { padding: 24px; }
+.tipo-vilao {
+  background: rgba(255, 60, 60, 0.2);
+  color: #ff4040;
+  border: 1px solid rgba(255, 60, 60, 0.3);
+}
+
+.tipo-suporte {
+  background: rgba(0, 207, 255, 0.2);
+  color: var(--neon-blue);
+  border: 1px solid rgba(0, 207, 255, 0.3);
+}
+
+.tipo-misterioso {
+  background: rgba(191, 95, 255, 0.2);
+  color: var(--neon-purple);
+  border: 1px solid rgba(191, 95, 255, 0.3);
+}
+
+.card-full-body {
+  padding: 24px;
+}
 
 .card-full-nome {
   font-family: var(--font-display);
@@ -180,11 +203,22 @@
 
 /* ── RESPONSIVO ── */
 @media (max-width: 900px) {
-  .personagens-full-grid { grid-template-columns: repeat(2, 1fr); }
+  .personagens-full-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 520px) {
-  .personagens-full-grid { grid-template-columns: 1fr; }
-  .filtros-bar { gap: 6px; }
-  .filtro-btn { padding: 6px 14px; font-size: 0.8rem; }
+  .personagens-full-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros-bar {
+    gap: 6px;
+  }
+
+  .filtro-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
 }

@@ -49,6 +49,9 @@
 
   /* Transições */
   --transition:   0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Padding */
+  --section-padding: 20px 5px;
 }
 
 /* ── TEMA LIGHT ── */
@@ -84,7 +87,7 @@ body {
 
 /* ── SEÇÕES ── */
 .section {
-  padding: 96px 0;
+  padding: var(--section-padding);
 }
 
 /* ── SECTION HEADER ── */
@@ -102,7 +105,7 @@ body {
   color: var(--neon-green);
   background: rgba(0, 255, 136, 0.08);
   border: 1px solid rgba(0, 255, 136, 0.2);
-  padding: 6px 14px;
+  padding: var(--section-padding);
   border-radius: 100px;
   margin-bottom: 16px;
 }

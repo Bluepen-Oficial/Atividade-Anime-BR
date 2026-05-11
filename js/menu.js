@@ -13,7 +13,7 @@ function toggleMenu() {
   
   mainNav.classList.toggle('open');
 
-  const estaAberto = mainNav.classList.contains('is-open');  
+  const estaAberto = mainNav.classList.contains('open');  
   hamburgerBtn.classList.toggle('active', estaAberto);
 
   // Controla aria-expanded para acessibilidade
