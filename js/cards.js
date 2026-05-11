@@ -91,7 +91,7 @@ const personagens = [
 function gerarCardsHome() {
   const grid = document.getElementById('personagens-grid');
   if (!grid) return; // Só executa na home
-
+  console.log("TESTE BB");
   // Mostra apenas os primeiros 4 personagens na home
   const preview = personagens.slice(0, 4);
 
@@ -116,7 +116,7 @@ function gerarCardsHome() {
 function gerarCardsFull() {
   const grid = document.getElementById('personagens-full-grid');
   if (!grid) return; // Só executa na página de personagens
-
+  console.log("TESTE CC");
   grid.innerHTML = personagens.map(function(p) {
     return `
       <div class="personagem-card-full" data-id="${p.id}" data-tipo="${p.tipo}">
@@ -189,6 +189,7 @@ function formatarTipo(tipo) {
 
 // ── INICIALIZAÇÃO ─────────────────────────────
 function initCards() {
+  console.log("TESTE AA");
   gerarCardsHome();
   gerarCardsFull();
   setupFiltros();

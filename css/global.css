@@ -155,12 +155,12 @@ body {
   background: transparent;
   color: var(--neon-green);
   box-shadow: var(--shadow-neon);
+  transform: translateY(-3px);
 }
 
 
-.btn-primary:hover {
-  transform: translateY(-3px);
- }
+/* .btn-primary:hover {
+ } */
 
 .btn-outline {
   background: transparent;

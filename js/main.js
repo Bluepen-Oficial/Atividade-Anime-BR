@@ -70,7 +70,7 @@ function animarEntrada() {
 
   alvos.forEach(function(alvo) {
     // Adiciona estado inicial para animação CSS
-    alvo.style.opacity = '0';
+    alvo.style.opacity = '100'; //Era o que estava deixando invisível o conteúdo
     alvo.style.transform = 'translateY(20px)';
     alvo.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(alvo);
