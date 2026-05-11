@@ -400,8 +400,8 @@
   .hero { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
   .hero-content { padding: 80px 24px; max-width: 100%; }
-  .destaques-grid { grid-template-columns: 1fr; }
-  .destaque-main { grid-row: auto; }
+  .destaques-grid { grid-template-columns: 2fr 1fr; }
+  .destaque-main { grid-row: auto auto; }
   .noticias-grid { grid-template-columns: 1fr; }
 }
 

@@ -57,7 +57,7 @@ function fecharMenuFora() {
 // Inicializa tudo relacionado ao menu
 function initMenu() {
   if (hamburgerBtn) {
-    hamburgerBtn.addEventListener('click', toggleMenu);
+    hamburgerBtn.addEventListener('click', toggleMenu());
   }
 
   if (mainNav) {
