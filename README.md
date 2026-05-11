@@ -137,7 +137,7 @@ O botão hamburguer nunca fica visualmente "ativo" (as três barras não viram X
 
 ## ✅ Checklist de Conclusão
 
-- [ ] Desafio 1: Contraste do hero-subtitle corrigido
+- [X] Desafio 1: Contraste do hero-subtitle corrigido
 - [ ] Desafio 2: Padding dos inputs equilibrado
 - [ ] Desafio 3: Botões do hero lado a lado (flex-direction: row)
 - [ ] Desafio 4: Fonte das notícias padronizada (Syne)
