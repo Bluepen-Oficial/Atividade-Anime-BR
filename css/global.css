@@ -6,49 +6,50 @@
 /* ── VARIÁVEIS DE TEMA DARK (padrão) ── */
 :root {
   /* Cores neon */
-  --neon-green:   #00ff88;
-  --neon-blue:    #00cfff;
-  --neon-purple:  #bf5fff;
-  --neon-yellow:  #ffe600;
+  --neon-green: #00ff88;
+  --neon-fundo: #00ff88;
+  --neon-blue: #00cfff;
+  --neon-purple: #bf5fff;
+  --neon-yellow: #ffe600;
 
   /* Backgrounds */
-  --bg-primary:   #0a0c10;
+  --bg-primary: #0a0c10;
   --bg-secondary: #111420;
-  --bg-card:      #161926;
+  --bg-card: #161926;
 
   /* Glass effect */
-  --glass-bg:     rgba(255, 255, 255, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(255, 255, 255, 0.08);
 
   /* Texto */
-  --text-primary:   #f0f4ff;
+  --text-primary: #f0f4ff;
   --text-secondary: #7a85a3;
-  --text-muted:     #53704a;
+  --text-muted: #53704a;
 
   /* Gradientes */
-  --grad-hero:    linear-gradient(135deg, #0a0c10 0%, #0d1220 50%, #101528 100%);
-  --grad-green:   linear-gradient(135deg, #00ff88, #00cfff);
-  --grad-purple:  linear-gradient(135deg, #bf5fff, #00cfff);
-  --grad-brazil:  linear-gradient(135deg, #009c3b, #ffdf00, #002776);
+  --grad-hero: linear-gradient(135deg, #0a0c10 0%, #0d1220 50%, #101528 100%);
+  --grad-green: linear-gradient(135deg, #00ff88, #00cfff);
+  --grad-purple: linear-gradient(135deg, #bf5fff, #00cfff);
+  --grad-brazil: linear-gradient(135deg, #009c3b, #ffdf00, #002776);
 
   /* Sombras */
-  --shadow-neon:  0 0 20px rgba(0, 255, 136, 0.2);
-  --shadow-card:  0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-neon: 0 0 20px rgba(0, 255, 136, 0.2);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
 
   /* Tipografia */
   --font-display: 'Bebas Neue', sans-serif;
-  --font-body:    'Syne', sans-serif;
-  --font-mono:    'Space Mono', monospace;
+  --font-body: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
 
   /* Layout */
-  --header-h:     72px;
-  --container-w:  1200px;
-  --radius-sm:    8px;
-  --radius-md:    16px;
-  --radius-lg:    24px;
+  --header-h: 72px;
+  --container-w: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
 
   /* Transições */
-  --transition:   0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Padding */
   --section-padding: 20px 5px;
@@ -56,18 +57,19 @@
 
 /* ── TEMA LIGHT ── */
 body.light-mode {
-  --bg-primary:   #f0f2f8;
+  --bg-primary: #f0f2f8;
   --bg-secondary: #ffffff;
-  --bg-card:      #ffffff;
+  --bg-card: #ffffff;
 
-  --glass-bg:     rgba(0, 0, 0, 0.04);
+  --glass-bg: rgba(0, 0, 0, 0.04);
   --glass-border: rgba(0, 0, 0, 0.1);
 
-  --text-primary:   #0f1220;
-  
+  --text-primary: #0f1220;
 
-  --shadow-card:  0 8px 32px rgba(0, 0, 0, 0.08);
-  --grad-hero:    linear-gradient(135deg, #e8ebf8 0%, #f0f3ff 100%);
+  --neon-fundo: rgb(59, 54, 54);
+
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --grad-hero: linear-gradient(135deg, #e8ebf8 0%, #f0f3ff 100%);
 }
 
 /* ── BASE ── */
@@ -271,14 +273,31 @@ body {
   letter-spacing: 0.04em;
 }
 
-.logo-icon { font-size: 1.4rem; }
-.logo-br { color: var(--neon-green); }
+.logo-icon {
+  font-size: 1.4rem;
+}
+
+.logo-br {
+  color: var(--neon-green);
+}
 
 /* ── SCROLLBAR ── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--neon-green); }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-green);
+}
 
 /* ── SELEÇÃO ── */
 ::selection {
@@ -288,6 +307,11 @@ body {
 
 /* ── RESPONSIVO BÁSICO ── */
 @media (max-width: 768px) {
-  .section { padding: 64px 0; }
-  .page-hero-content { padding: 48px 24px; }
+  .section {
+    padding: 64px 0;
+  }
+
+  .page-hero-content {
+    padding: 48px 24px;
+  }
 }

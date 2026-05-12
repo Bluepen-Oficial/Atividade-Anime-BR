@@ -150,19 +150,19 @@ body.light-mode .site-header {
   .btn-menu { display: flex; }
 
   .main-nav {
-    position: fixed;
-    top: var(--header-h);
-    left: 0;
-    right: 0;
     background: var(--bg-secondary);
     border-bottom: 1px solid var(--glass-border);
     padding: 16px 24px 24px;
     transform: translateY(-110%);
-    transition: transform var(--transition);
+    /* transition: transform var(--transition); */
     z-index: 99;
   }
-
+  
   .main-nav.open {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
     transform: translateY(0);
   }
 
